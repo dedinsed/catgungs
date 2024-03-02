@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Addjob from '@/components/Addjob.vue'
-
+import ListStaff from '@/views/ListStaff.vue'
 const routes = [
   {
     path: '/',
@@ -12,7 +12,13 @@ const routes = [
     path: '/addjob',
     name: 'addjob',
     component: Addjob
+  },
+  {
+    path: '/liststaff',
+    name: 'liststaff',
+    component: ListStaff
   }
+  
 ]
 
 const router = createRouter({

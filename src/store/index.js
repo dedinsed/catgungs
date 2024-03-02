@@ -5,13 +5,16 @@ export default createStore({
     worker: []
   },
   getters: {
-    getAllWorker(state){
+    getAllJob(state){
       return state.worker
     }
   },
   mutations: {
     addJob(state, par){
       state.worker.push(par)
+    },
+    deleteCatName(state, par){
+      state.worker = state.worker.filter(a => a.nickname != par)
     }
   },
   actions: {

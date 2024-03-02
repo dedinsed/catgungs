@@ -1,16 +1,21 @@
-<template>
+
+ <template>
   <div class="rows">
   <h1> Принятие на работу </h1>
       <div>
           <div class="mb-3">
           <label for="CatName" class="form-label">Кличка</label>
-          <input v-model="staff.nicname" type="text" class="form-control" id="CatName" aria-describedby="emailHelp">
+          <input v-model="staff.nickname" type="text" class="form-control" id="CatName" aria-describedby="emailHelp">
       </div>
       <div class="mb-3">
         <label for="catAge" class="form-label">Возраст</label>
         <input v-model="staff.age" type="text" class="form-control" id="catAge">
       </div>
-      <button v-on:click="addStaff" class="btn btn-primary">Сохранить</button>
+      <div class="mb-3">
+        <label for="catJobDate" class="form-label">Дата приема на работу</label>
+        <input v-model = "staff.dateStartJob" type="date" class="form-control" id="catJobDate">
+      </div>
+      <button v-on:click="addJob" class="btn btn-primary">Сохранить</button>
       </div>
   </div>
 </template>
@@ -23,16 +28,16 @@ export default {
     msg: String
   },
   data(){
-    return{
-      staff: Cat
+    return {
+       staff:  Cat
     }
+   
   },
   methods:{
-    addStaff(){
-          this.$store.commit('addJob', this.staff)
+    addJob(){
+        this.$store.commit('addJob', {...this.staff})
     }
   }
-
 }
 </script>
 
