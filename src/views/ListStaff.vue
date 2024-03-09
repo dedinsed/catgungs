@@ -1,14 +1,15 @@
 <template>
   <div class="rows">
   <h1> Список сотрудников банды!!!</h1>
-
-  <div v-for="cat in staff" :key = "cat.nickname" >
-    <JobCard :nickname="cat.nickname"  
+  <div v-if="staff">
+  <div v-for="cat in staff" :key = "cat.id" >
+    <JobCard :id="cat.id" 
+       :nickname="cat.nickname" 
        :age="cat.age" 
        :startDate="cat.dateStartJob" v-on:delete="deleteCat" />
     
   </div>
-
+ </div>
 
   </div>
 </template>
@@ -34,6 +35,3 @@ export default {
   }
 }
 </script>
-  
-  
-

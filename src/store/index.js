@@ -2,19 +2,28 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    worker: []
+    workers : []
   },
   getters: {
     getAllJob(state){
-      return state.worker
+      return state.workers
+    },
+   
+    getCatId: state =>(id) =>{
+      return state.workers.find(a=> a.idCat == id);
     }
   },
   mutations: {
-    addJob(state, par){
-      state.worker.push(par)
+    addWorker(state, par){
+      this.state.workers.push(par)
     },
     deleteCatName(state, par){
-      state.worker = state.worker.filter(a => a.nickname != par)
+      state.workers = state.workers.filter(a => a.id != par)
+    },
+
+    editWorker(state, par){
+      state.workers = state.workers.filter(a => a.id != par.id);
+      state.workers.push(par);
     }
   },
   actions: {

@@ -14,6 +14,9 @@ export default {
   name: 'App',
   components: {
     Menu
+  },
+  mounted(){
+    
   }
 }
 </script>
