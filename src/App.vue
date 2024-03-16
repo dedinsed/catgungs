@@ -15,10 +15,11 @@ export default {
   components: {
     Menu
   },
-  mounted(){
-    
+ mounted(){
+    this.$store.dispatch('download')
   }
 }
+
 </script>
 <style scoped>
 

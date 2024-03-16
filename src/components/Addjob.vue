@@ -14,9 +14,12 @@
         <label for="catJobDate" class="form-label">Дата приема на работу</label>
         <input v-model = "staff.dateStartJob" type="date" class="form-control" id="catJobDate">
       </div>
+       <label for="catStreet" class="form-label">Улица</label>
+        <input v-model = "staff.street" type="date" class="form-control" id="catJobDate">
+      </div>
       <button v-on:click="addJob" class="btn btn-primary">Сохранить</button>
       </div>
-  </div>
+  
 </template>
 
 <script>

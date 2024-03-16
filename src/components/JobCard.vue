@@ -8,6 +8,7 @@
         <p class="card-text">
           Возраст {{age}} <br/>
           Дата приема на работу {{startDate}}
+          Улица {{street}}
         </p>
         <router-link class="btn btn-primary" :to="{name: 'edit', params:{id: id}}">Редактировать</router-link> 
         <button v-on:click="deleteCat" type="button" class="btn btn-danger">Удалить</button>
